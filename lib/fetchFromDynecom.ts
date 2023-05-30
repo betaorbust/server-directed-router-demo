@@ -42,8 +42,8 @@ export const sendActionToDynecom = async (
 			mode: 'mode1',
 		},
 		action3: {
-			flow: 'flow2',
-			mode: 'mode2',
+			flow: 'flow1',
+			mode: 'mode1',
 		},
 	};
 
