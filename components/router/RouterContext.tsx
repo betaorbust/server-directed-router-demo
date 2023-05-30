@@ -12,30 +12,30 @@
 import { createContext } from 'react';
 
 export type Action<T = Record<string, any>> = {
-    type: string;
-    name: string;
-    data?: T;
+	type: string;
+	name: string;
+	data?: T;
 };
 
 export type TakeAction = (action: Action) => Promise<void>;
 
 type RouterContextType = {
-    path: string;
-    flow: string;
-    mode: string;
-    data: Record<string, any>;
-    takeAction: TakeAction;
+	path: string;
+	flow: string;
+	mode: string;
+	data: Record<string, any>;
+	takeAction: TakeAction;
 };
 
 const RouterContext = createContext(
-    new Proxy(
-        {},
-        {
-            get() {
-                throw new Error('RouterContext not found');
-            },
-        }
-    ) as RouterContextType
+	new Proxy(
+		{},
+		{
+			get() {
+				throw new Error('RouterContext not found');
+			},
+		}
+	) as RouterContextType
 );
 
 export default RouterContext;
